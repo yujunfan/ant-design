@@ -8,7 +8,7 @@ import { ConfigContext, ConfigConsumerProps } from '../config-provider';
 import { FormContext } from './context';
 import { FormLabelAlign } from './interface';
 import { useForm, FormInstance } from './util';
-import SizeContext, { SizeType } from '../config-provider/SizeContext';
+import SizeContext, { SizeType, SizeContextProvider } from '../config-provider/SizeContext';
 
 export type FormLayout = 'horizontal' | 'inline' | 'vertical';
 
@@ -69,7 +69,7 @@ const InternalForm: React.FC<FormProps> = (props, ref) => {
   React.useImperativeHandle(ref, () => wrapForm);
 
   return (
-    <SizeContext.Provider value={{ size }}>
+    <SizeContextProvider size={size}>
       <FormContext.Provider
         value={{
           name,
@@ -82,7 +82,7 @@ const InternalForm: React.FC<FormProps> = (props, ref) => {
       >
         <FieldForm id={name} {...formProps} form={wrapForm} className={formClassName} />
       </FormContext.Provider>
-    </SizeContext.Provider>
+    </SizeContextProvider>
   );
 };
 
