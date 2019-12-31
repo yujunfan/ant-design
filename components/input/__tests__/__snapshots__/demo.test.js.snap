@@ -19,6 +19,7 @@ exports[`renders ./components/input/demo/addon.md correctly 1`] = `
         <input
           class="ant-input"
           type="text"
+          value="mysite"
         />
         <span
           class="ant-input-group-addon"
@@ -102,6 +103,7 @@ exports[`renders ./components/input/demo/addon.md correctly 1`] = `
         <input
           class="ant-input"
           type="text"
+          value="mysite"
         />
         <span
           class="ant-input-group-addon"
@@ -180,6 +182,7 @@ exports[`renders ./components/input/demo/addon.md correctly 1`] = `
         <input
           class="ant-input"
           type="text"
+          value="mysite"
         />
         <span
           class="ant-input-group-addon"
@@ -238,6 +241,7 @@ exports[`renders ./components/input/demo/align.md correctly 1`] = `
     class="ant-input"
     style="width:100px"
     type="text"
+    value=""
   />
   <span
     class="ant-typography"
@@ -283,8 +287,8 @@ exports[`renders ./components/input/demo/align.md correctly 1`] = `
     </span>
     <input
       class="ant-input"
-      style="width:100px"
       type="text"
+      value=""
     />
     <span
       class="ant-input-suffix"
@@ -306,8 +310,8 @@ exports[`renders ./components/input/demo/align.md correctly 1`] = `
       </span>
       <input
         class="ant-input"
-        style="width:100px"
         type="text"
+        value=""
       />
       <span
         class="ant-input-group-addon"
@@ -889,6 +893,7 @@ exports[`renders ./components/input/demo/allowClear.md correctly 1`] = `
       class="ant-input"
       placeholder="input with clear icon"
       type="text"
+      value=""
     />
     <span
       class="ant-input-suffix"
@@ -935,6 +940,7 @@ exports[`renders ./components/input/demo/basic.md correctly 1`] = `
   class="ant-input"
   placeholder="Basic usage"
   type="text"
+  value=""
 />
 `;
 
@@ -956,6 +962,7 @@ exports[`renders ./components/input/demo/group.md correctly 1`] = `
         <input
           class="ant-input"
           type="text"
+          value="0571"
         />
       </div>
       <div
@@ -965,6 +972,7 @@ exports[`renders ./components/input/demo/group.md correctly 1`] = `
         <input
           class="ant-input"
           type="text"
+          value="26888888"
         />
       </div>
     </div>
@@ -977,11 +985,13 @@ exports[`renders ./components/input/demo/group.md correctly 1`] = `
       class="ant-input"
       style="width:20%"
       type="text"
+      value="0571"
     />
     <input
       class="ant-input"
       style="width:30%"
       type="text"
+      value="26888888"
     />
   </span>
   <br />
@@ -1049,6 +1059,7 @@ exports[`renders ./components/input/demo/group.md correctly 1`] = `
       class="ant-input"
       style="width:50%"
       type="text"
+      value="Xihu District, Hangzhou"
     />
   </span>
   <br />
@@ -1116,6 +1127,7 @@ exports[`renders ./components/input/demo/group.md correctly 1`] = `
       class="ant-input"
       style="width:50%"
       type="text"
+      value="input content"
     />
     <div
       class="ant-input-number"
@@ -1203,6 +1215,7 @@ exports[`renders ./components/input/demo/group.md correctly 1`] = `
       class="ant-input"
       style="width:50%"
       type="text"
+      value="input content"
     />
     <div
       class="ant-picker"
@@ -1429,6 +1442,7 @@ exports[`renders ./components/input/demo/group.md correctly 1`] = `
       placeholder="Minimum"
       style="width:100px;text-align:center"
       type="text"
+      value=""
     />
     <input
       class="ant-input ant-input-disabled site-input-split"
@@ -1436,12 +1450,14 @@ exports[`renders ./components/input/demo/group.md correctly 1`] = `
       placeholder="~"
       style="width:30px;border-left:0;border-right:0;pointer-events:none"
       type="text"
+      value=""
     />
     <input
       class="ant-input"
       placeholder="Maximum"
       style="width:100px;text-align:center;border-left:0"
       type="text"
+      value=""
     />
   </span>
   <br />
@@ -1645,9 +1661,10 @@ exports[`renders ./components/input/demo/password-input.md correctly 1`] = `
 >
   <input
     action="click"
-    class="ant-input ant-input-password"
+    class="ant-input"
     placeholder="input password"
     type="password"
+    value=""
   />
   <span
     class="ant-input-suffix"
@@ -1713,6 +1730,7 @@ exports[`renders ./components/input/demo/presuffix.md correctly 1`] = `
       class="ant-input"
       placeholder="Enter your username"
       type="text"
+      value=""
     />
     <span
       class="ant-input-suffix"
@@ -1756,6 +1774,7 @@ exports[`renders ./components/input/demo/presuffix.md correctly 1`] = `
     <input
       class="ant-input"
       type="text"
+      value=""
     />
     <span
       class="ant-input-suffix"
@@ -1773,10 +1792,10 @@ exports[`renders ./components/input/demo/search-input.md correctly 1`] = `
     style="width:200px"
   >
     <input
-      class="ant-input ant-input-search"
+      class="ant-input"
       placeholder="input search text"
-      style="width:200px"
       type="text"
+      value=""
     />
     <span
       class="ant-input-suffix"
@@ -1816,6 +1835,7 @@ exports[`renders ./components/input/demo/search-input.md correctly 1`] = `
         class="ant-input"
         placeholder="input search text"
         type="text"
+        value=""
       />
       <span
         class="ant-input-group-addon"
@@ -1860,6 +1880,7 @@ exports[`renders ./components/input/demo/search-input.md correctly 1`] = `
         class="ant-input ant-input-lg"
         placeholder="input search text"
         type="text"
+        value=""
       />
       <span
         class="ant-input-group-addon"
@@ -1884,9 +1905,10 @@ exports[`renders ./components/input/demo/search-input-loading.md correctly 1`] =
     class="ant-input-search ant-input-affix-wrapper"
   >
     <input
-      class="ant-input ant-input-search"
+      class="ant-input"
       placeholder="input search loading deault"
       type="text"
+      value=""
     />
     <span
       class="ant-input-suffix"
@@ -1925,6 +1947,7 @@ exports[`renders ./components/input/demo/search-input-loading.md correctly 1`] =
         class="ant-input"
         placeholder="input search loading with enterButton"
         type="text"
+        value=""
       />
       <span
         class="ant-input-group-addon"
@@ -1968,16 +1991,19 @@ exports[`renders ./components/input/demo/size.md correctly 1`] = `
     class="ant-input ant-input-lg"
     placeholder="large size"
     type="text"
+    value=""
   />
   <input
     class="ant-input"
     placeholder="default size"
     type="text"
+    value=""
   />
   <input
     class="ant-input ant-input-sm"
     placeholder="small size"
     type="text"
+    value=""
   />
 </div>
 `;

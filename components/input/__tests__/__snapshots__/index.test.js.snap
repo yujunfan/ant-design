@@ -173,9 +173,12 @@ exports[`Input allowClear should not show icon if defaultValue is undefined, nul
     allowClear={true}
     defaultValue={null}
     element={
-      <Context.Consumer>
-        [Function]
-      </Context.Consumer>
+      <input
+        className="ant-input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+      />
     }
     handleReset={[Function]}
     inputType="input"
@@ -190,7 +193,9 @@ exports[`Input allowClear should not show icon if defaultValue is undefined, nul
         className="ant-input"
         onChange={[Function]}
         onKeyDown={[Function]}
+        style={null}
         type="text"
+        value=""
       />
       <span
         className="ant-input-suffix"
@@ -208,9 +213,12 @@ exports[`Input allowClear should not show icon if defaultValue is undefined, nul
   <ClearableLabeledInput
     allowClear={true}
     element={
-      <Context.Consumer>
-        [Function]
-      </Context.Consumer>
+      <input
+        className="ant-input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+      />
     }
     handleReset={[Function]}
     inputType="input"
@@ -225,7 +233,9 @@ exports[`Input allowClear should not show icon if defaultValue is undefined, nul
         className="ant-input"
         onChange={[Function]}
         onKeyDown={[Function]}
+        style={null}
         type="text"
+        value=""
       />
       <span
         className="ant-input-suffix"
@@ -245,9 +255,12 @@ exports[`Input allowClear should not show icon if defaultValue is undefined, nul
     allowClear={true}
     defaultValue=""
     element={
-      <Context.Consumer>
-        [Function]
-      </Context.Consumer>
+      <input
+        className="ant-input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+      />
     }
     handleReset={[Function]}
     inputType="input"
@@ -262,7 +275,9 @@ exports[`Input allowClear should not show icon if defaultValue is undefined, nul
         className="ant-input"
         onChange={[Function]}
         onKeyDown={[Function]}
+        style={null}
         type="text"
+        value=""
       />
       <span
         className="ant-input-suffix"
@@ -281,9 +296,13 @@ exports[`Input allowClear should not show icon if value is undefined, null or em
   <ClearableLabeledInput
     allowClear={true}
     element={
-      <Context.Consumer>
-        [Function]
-      </Context.Consumer>
+      <input
+        className="ant-input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+        value={null}
+      />
     }
     handleReset={[Function]}
     inputType="input"
@@ -298,8 +317,9 @@ exports[`Input allowClear should not show icon if value is undefined, null or em
         className="ant-input"
         onChange={[Function]}
         onKeyDown={[Function]}
+        style={null}
         type="text"
-        value={null}
+        value=""
       />
       <span
         className="ant-input-suffix"
@@ -317,9 +337,12 @@ exports[`Input allowClear should not show icon if value is undefined, null or em
   <ClearableLabeledInput
     allowClear={true}
     element={
-      <Context.Consumer>
-        [Function]
-      </Context.Consumer>
+      <input
+        className="ant-input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+      />
     }
     handleReset={[Function]}
     inputType="input"
@@ -334,7 +357,9 @@ exports[`Input allowClear should not show icon if value is undefined, null or em
         className="ant-input"
         onChange={[Function]}
         onKeyDown={[Function]}
+        style={null}
         type="text"
+        value=""
       />
       <span
         className="ant-input-suffix"
@@ -353,9 +378,13 @@ exports[`Input allowClear should not show icon if value is undefined, null or em
   <ClearableLabeledInput
     allowClear={true}
     element={
-      <Context.Consumer>
-        [Function]
-      </Context.Consumer>
+      <input
+        className="ant-input"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+        value=""
+      />
     }
     handleReset={[Function]}
     inputType="input"
@@ -370,6 +399,7 @@ exports[`Input allowClear should not show icon if value is undefined, null or em
         className="ant-input"
         onChange={[Function]}
         onKeyDown={[Function]}
+        style={null}
         type="text"
         value=""
       />
@@ -388,9 +418,13 @@ exports[`Input should support maxLength 1`] = `
 >
   <ClearableLabeledInput
     element={
-      <Context.Consumer>
-        [Function]
-      </Context.Consumer>
+      <input
+        className="ant-input"
+        maxLength={3}
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+      />
     }
     handleReset={[Function]}
     inputType="input"
@@ -405,6 +439,7 @@ exports[`Input should support maxLength 1`] = `
       onChange={[Function]}
       onKeyDown={[Function]}
       type="text"
+      value=""
     />
   </ClearableLabeledInput>
 </Input>
@@ -434,9 +469,12 @@ exports[`Input.Search should support suffix 1`] = `
     <ClearableLabeledInput
       className="ant-input-search"
       element={
-        <Context.Consumer>
-          [Function]
-        </Context.Consumer>
+        <input
+          className="ant-input ant-input-search"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          type="text"
+        />
       }
       handleReset={[Function]}
       inputType="input"
@@ -459,10 +497,12 @@ exports[`Input.Search should support suffix 1`] = `
         className="ant-input-search ant-input-affix-wrapper"
       >
         <input
-          className="ant-input ant-input-search"
+          className="ant-input"
           onChange={[Function]}
           onKeyDown={[Function]}
+          style={null}
           type="text"
+          value=""
         />
         <span
           className="ant-input-suffix"

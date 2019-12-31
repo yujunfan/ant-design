@@ -150,7 +150,7 @@ class Input extends React.Component<InputProps, InputState> {
     resolveOnChange(this.input, e, this.props.onChange);
   };
 
-  renderInput = (prefixCls: string) => {
+  renderInput = (prefixCls: string, size: SizeType) => {
     const { className, addonBefore, addonAfter, size: customizeSize, disabled } = this.props;
     // Fix https://fb.me/react-unknown-prop
     const otherProps = omit(this.props, [
@@ -169,19 +169,15 @@ class Input extends React.Component<InputProps, InputState> {
     ]);
 
     return (
-      <SizeContext.Consumer>
-        {({ size }) => (
-          <input
-            {...otherProps}
-            onChange={this.handleChange}
-            onKeyDown={this.handleKeyDown}
-            className={classNames(getInputClassName(prefixCls, customizeSize || size, disabled), {
-              [className!]: className && !addonBefore && !addonAfter,
-            })}
-            ref={this.saveInput}
-          />
-        )}
-      </SizeContext.Consumer>
+      <input
+        {...otherProps}
+        onChange={this.handleChange}
+        onKeyDown={this.handleKeyDown}
+        className={classNames(getInputClassName(prefixCls, customizeSize || size, disabled), {
+          [className!]: className && !addonBefore && !addonAfter,
+        })}
+        ref={this.saveInput}
+      />
     );
   };
 
@@ -205,15 +201,19 @@ class Input extends React.Component<InputProps, InputState> {
     const { prefixCls: customizePrefixCls } = this.props;
     const prefixCls = getPrefixCls('input', customizePrefixCls);
     return (
-      <ClearableLabeledInput
-        {...this.props}
-        prefixCls={prefixCls}
-        inputType="input"
-        value={fixControlledValue(value)}
-        element={this.renderInput(prefixCls)}
-        handleReset={this.handleReset}
-        ref={this.saveClearableInput}
-      />
+      <SizeContext.Consumer>
+        {({ size }) => (
+          <ClearableLabeledInput
+            {...this.props}
+            prefixCls={prefixCls}
+            inputType="input"
+            value={fixControlledValue(value)}
+            element={this.renderInput(prefixCls, size)}
+            handleReset={this.handleReset}
+            ref={this.saveClearableInput}
+          />
+        )}
+      </SizeContext.Consumer>
     );
   };
 
