@@ -15,7 +15,7 @@ only: true
 Set component size, only works for antd components.
 
 ```tsx
-import { Form, Input, Button, Radio, Select, Cascader, DatePicker } from 'antd';
+import { Form, Input, Button, Radio, Select, Cascader, DatePicker, InputNumber } from 'antd';
 
 const FormLayoutDemo = () => {
   const [componentSize, setComponentSize] = React.useState('default');
@@ -67,6 +67,9 @@ const FormLayoutDemo = () => {
         </Form.Item>
         <Form.Item label="DatePicker">
           <DatePicker />
+        </Form.Item>
+        <Form.Item label="InputNumber">
+          <InputNumber />
         </Form.Item>
         <Form.Item label="Button">
           <Button>Button</Button>
