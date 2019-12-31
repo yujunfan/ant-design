@@ -24,6 +24,7 @@ import {
   Cascader,
   DatePicker,
   InputNumber,
+  TreeSelect,
   Switch,
 } from 'antd';
 
@@ -58,6 +59,13 @@ const FormLayoutDemo = () => {
           <Select>
             <Select.Option value="demo">Demo</Select.Option>
           </Select>
+        </Form.Item>
+        <Form.Item label="TreeSelect">
+          <TreeSelect
+            treeData={[
+              { title: 'Light', value: 'light', children: [{ title: 'Bamboo', value: 'bamboo' }] },
+            ]}
+          />
         </Form.Item>
         <Form.Item label="Cascader">
           <Cascader
