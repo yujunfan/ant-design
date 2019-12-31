@@ -1781,7 +1781,7 @@ exports[`renders ./components/date-picker/demo/size.md correctly 1`] = `
   <br />
   <br />
   <div
-    class="ant-picker ant-picker-default"
+    class="ant-picker ant-picker-undefined"
   >
     <div
       class="ant-picker-input"
@@ -1820,7 +1820,7 @@ exports[`renders ./components/date-picker/demo/size.md correctly 1`] = `
   </div>
   <br />
   <div
-    class="ant-picker ant-picker-default"
+    class="ant-picker ant-picker-undefined"
   >
     <div
       class="ant-picker-input"
@@ -1921,7 +1921,7 @@ exports[`renders ./components/date-picker/demo/size.md correctly 1`] = `
   </div>
   <br />
   <div
-    class="ant-picker ant-picker-default"
+    class="ant-picker ant-picker-undefined"
   >
     <div
       class="ant-picker-input"

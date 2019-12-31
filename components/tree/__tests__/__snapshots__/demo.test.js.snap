@@ -2169,10 +2169,10 @@ exports[`renders ./components/tree/demo/search.md correctly 1`] = `
     style="margin-bottom:8px"
   >
     <input
-      class="ant-input"
+      class="ant-input ant-input-search"
       placeholder="Search"
+      style="margin-bottom:8px"
       type="text"
-      value=""
     />
     <span
       class="ant-input-suffix"

@@ -6757,7 +6757,6 @@ exports[`ConfigProvider components Form configProvider 1`] = `
         <input
           class="config-input"
           type="text"
-          value=""
         />
       </div>
       <div
@@ -6788,7 +6787,6 @@ exports[`ConfigProvider components Form normal 1`] = `
         <input
           class="ant-input"
           type="text"
-          value=""
         />
       </div>
       <div
@@ -6819,7 +6817,6 @@ exports[`ConfigProvider components Form prefixCls 1`] = `
         <input
           class="prefix-Form"
           type="text"
-          value=""
         />
       </div>
       <div
@@ -6872,15 +6869,13 @@ exports[`ConfigProvider components Input configProvider 1`] = `
     <input
       class="config-input"
       type="text"
-      value=""
     />
     <span
       class="config-input-search config-input-affix-wrapper"
     >
       <input
-        class="config-input"
+        class="config-input config-input-search"
         type="text"
-        value=""
       />
       <span
         class="config-input-suffix"
@@ -6923,15 +6918,13 @@ exports[`ConfigProvider components Input normal 1`] = `
     <input
       class="ant-input"
       type="text"
-      value=""
     />
     <span
       class="ant-input-search ant-input-affix-wrapper"
     >
       <input
-        class="ant-input"
+        class="ant-input ant-input-search"
         type="text"
-        value=""
       />
       <span
         class="ant-input-suffix"
@@ -6974,15 +6967,13 @@ exports[`ConfigProvider components Input prefixCls 1`] = `
     <input
       class="prefix-Input"
       type="text"
-      value=""
     />
     <span
       class="prefix-Input ant-input-affix-wrapper"
     >
       <input
-        class="ant-input"
+        class="ant-input prefix-Input"
         type="text"
-        value=""
       />
       <span
         class="ant-input-suffix"
