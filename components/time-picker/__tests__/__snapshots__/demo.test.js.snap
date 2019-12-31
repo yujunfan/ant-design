@@ -446,7 +446,7 @@ exports[`renders ./components/time-picker/demo/range-picker.md correctly 1`] = `
 exports[`renders ./components/time-picker/demo/size.md correctly 1`] = `
 <div>
   <div
-    class="ant-picker ant-picker-undefined"
+    class="ant-picker ant-picker-large"
   >
     <div
       class="ant-picker-input"
@@ -576,7 +576,7 @@ exports[`renders ./components/time-picker/demo/size.md correctly 1`] = `
     </div>
   </div>
   <div
-    class="ant-picker ant-picker-undefined"
+    class="ant-picker ant-picker-small"
   >
     <div
       class="ant-picker-input"
