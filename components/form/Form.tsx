@@ -8,7 +8,7 @@ import { ConfigContext, ConfigConsumerProps } from '../config-provider';
 import { FormContext } from './context';
 import { FormLabelAlign } from './interface';
 import { useForm, FormInstance } from './util';
-import SizeContext, { SizeType, SizeContextProvider } from '../config-provider/SizeContext';
+import { SizeType, SizeContextProvider } from '../config-provider/SizeContext';
 
 export type FormLayout = 'horizontal' | 'inline' | 'vertical';
 

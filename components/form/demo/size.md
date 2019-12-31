@@ -28,7 +28,7 @@ import {
   Switch,
 } from 'antd';
 
-const FormLayoutDemo = () => {
+const FormSizeDemo = () => {
   const [componentSize, setComponentSize] = React.useState('default');
 
   const onFormLayoutChange = ({ size }) => {
@@ -100,5 +100,5 @@ const FormLayoutDemo = () => {
   );
 };
 
-ReactDOM.render(<FormLayoutDemo />, mountNode);
+ReactDOM.render(<FormSizeDemo />, mountNode);
 ```
