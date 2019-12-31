@@ -6,10 +6,9 @@ import classNames from 'classnames';
 import RcSelect, { Option, OptGroup, SelectProps as RcSelectProps } from 'rc-select';
 import { ConfigConsumer, ConfigConsumerProps } from '../config-provider';
 import getIcons from './utils/iconUtil';
+import SizeContext, { SizeType } from '../config-provider/SizeContext';
 
 type RawValue = string | number;
-
-export type Size = 'large' | 'default' | 'small';
 
 export type OptionType = typeof Option;
 
@@ -23,7 +22,7 @@ export type SelectValue = RawValue | RawValue[] | LabeledValue | LabeledValue[];
 
 export interface InternalSelectProps<VT> extends Omit<RcSelectProps<VT>, 'mode'> {
   suffixIcon?: React.ReactNode;
-  size?: Size;
+  size?: SizeType;
   mode?: 'multiple' | 'tags' | 'SECRET_COMBOBOX_MODE_DO_NOT_USE';
 }
 
@@ -84,7 +83,7 @@ class Select<ValueType extends SelectValue = SelectValue> extends React.Componen
       prefixCls: customizePrefixCls,
       notFoundContent,
       className,
-      size,
+      size: customizeSize,
       listHeight = 256,
       listItemHeight = 32,
       getPopupContainer,
@@ -96,7 +95,7 @@ class Select<ValueType extends SelectValue = SelectValue> extends React.Componen
     const isMultiple = mode === 'multiple' || mode === 'tags';
 
     // ===================== Empty =====================
-    let mergedNotFound;
+    let mergedNotFound: React.ReactNode;
     if (notFoundContent !== undefined) {
       mergedNotFound = notFoundContent;
     } else if (mode === 'combobox') {
@@ -120,27 +119,34 @@ class Select<ValueType extends SelectValue = SelectValue> extends React.Componen
       'size',
     ]);
 
-    const mergedClassName = classNames(className, {
-      [`${prefixCls}-lg`]: size === 'large',
-      [`${prefixCls}-sm`]: size === 'small',
-    });
-
     return (
-      <RcSelect<ValueType>
-        ref={this.selectRef}
-        {...selectProps}
-        listHeight={listHeight}
-        listItemHeight={listItemHeight}
-        mode={mode}
-        prefixCls={prefixCls}
-        inputIcon={suffixIcon}
-        menuItemSelectedIcon={itemIcon}
-        removeIcon={removeIcon}
-        clearIcon={clearIcon}
-        notFoundContent={mergedNotFound}
-        className={mergedClassName}
-        getPopupContainer={getPopupContainer || getContextPopupContainer}
-      />
+      <SizeContext.Consumer>
+        {({ size }) => {
+          const mergedSize = customizeSize || size;
+          const mergedClassName = classNames(className, {
+            [`${prefixCls}-lg`]: mergedSize === 'large',
+            [`${prefixCls}-sm`]: mergedSize === 'small',
+          });
+
+          return (
+            <RcSelect<ValueType>
+              ref={this.selectRef}
+              {...selectProps}
+              listHeight={listHeight}
+              listItemHeight={listItemHeight}
+              mode={mode}
+              prefixCls={prefixCls}
+              inputIcon={suffixIcon}
+              menuItemSelectedIcon={itemIcon}
+              removeIcon={removeIcon}
+              clearIcon={clearIcon}
+              notFoundContent={mergedNotFound}
+              className={mergedClassName}
+              getPopupContainer={getPopupContainer || getContextPopupContainer}
+            />
+          );
+        }}
+      </SizeContext.Consumer>
     );
   };
 

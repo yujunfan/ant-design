@@ -8,14 +8,13 @@ import Password from './Password';
 import { Omit, tuple } from '../_util/type';
 import ClearableLabeledInput, { hasPrefixSuffix } from './ClearableLabeledInput';
 import { ConfigConsumer, ConfigConsumerProps } from '../config-provider';
+import SizeContext, { SizeType } from '../config-provider/SizeContext';
 import warning from '../_util/warning';
-
-export const InputSizes = tuple('small', 'default', 'large');
 
 export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'prefix'> {
   prefixCls?: string;
-  size?: typeof InputSizes[number];
+  size?: SizeType;
   onPressEnter?: React.KeyboardEventHandler<HTMLInputElement>;
   addonBefore?: React.ReactNode;
   addonAfter?: React.ReactNode;
@@ -57,11 +56,7 @@ export function resolveOnChange(
   }
 }
 
-export function getInputClassName(
-  prefixCls: string,
-  size?: typeof InputSizes[number],
-  disabled?: boolean,
-) {
+export function getInputClassName(prefixCls: string, size?: SizeType, disabled?: boolean) {
   return classNames(prefixCls, {
     [`${prefixCls}-sm`]: size === 'small',
     [`${prefixCls}-lg`]: size === 'large',
@@ -156,7 +151,7 @@ class Input extends React.Component<InputProps, InputState> {
   };
 
   renderInput = (prefixCls: string) => {
-    const { className, addonBefore, addonAfter, size, disabled } = this.props;
+    const { className, addonBefore, addonAfter, size: customizeSize, disabled } = this.props;
     // Fix https://fb.me/react-unknown-prop
     const otherProps = omit(this.props, [
       'prefixCls',
@@ -172,16 +167,21 @@ class Input extends React.Component<InputProps, InputState> {
       'size',
       'inputType',
     ]);
+
     return (
-      <input
-        {...otherProps}
-        onChange={this.handleChange}
-        onKeyDown={this.handleKeyDown}
-        className={classNames(getInputClassName(prefixCls, size, disabled), {
-          [className!]: className && !addonBefore && !addonAfter,
-        })}
-        ref={this.saveInput}
-      />
+      <SizeContext.Consumer>
+        {({ size }) => (
+          <input
+            {...otherProps}
+            onChange={this.handleChange}
+            onKeyDown={this.handleKeyDown}
+            className={classNames(getInputClassName(prefixCls, customizeSize || size, disabled), {
+              [className!]: className && !addonBefore && !addonAfter,
+            })}
+            ref={this.saveInput}
+          />
+        )}
+      </SizeContext.Consumer>
     );
   };
 
