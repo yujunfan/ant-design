@@ -10,6 +10,7 @@ import {
   RadioGroupButtonStyle,
 } from './interface';
 import { ConfigConsumer, ConfigConsumerProps } from '../config-provider';
+import SizeContext from '../config-provider/SizeContext';
 
 function getCheckedValue(children: React.ReactNode) {
   let value = null;
@@ -96,17 +97,15 @@ class RadioGroup extends React.Component<RadioGroupProps, RadioGroupState> {
 
   renderGroup = ({ getPrefixCls }: ConfigConsumerProps) => {
     const { props } = this;
-    const { prefixCls: customizePrefixCls, className = '', options, buttonStyle } = props;
+    const {
+      prefixCls: customizePrefixCls,
+      className = '',
+      options,
+      buttonStyle,
+      size: customizeSize,
+    } = props;
     const prefixCls = getPrefixCls('radio', customizePrefixCls);
     const groupPrefixCls = `${prefixCls}-group`;
-    const classString = classNames(
-      groupPrefixCls,
-      `${groupPrefixCls}-${buttonStyle}`,
-      {
-        [`${groupPrefixCls}-${props.size}`]: props.size,
-      },
-      className,
-    );
 
     let { children } = props;
 
@@ -143,15 +142,31 @@ class RadioGroup extends React.Component<RadioGroupProps, RadioGroupState> {
     }
 
     return (
-      <div
-        className={classString}
-        style={props.style}
-        onMouseEnter={props.onMouseEnter}
-        onMouseLeave={props.onMouseLeave}
-        id={props.id}
-      >
-        {children}
-      </div>
+      <SizeContext.Consumer>
+        {({ size }) => {
+          const mergedSize = customizeSize || size;
+          const classString = classNames(
+            groupPrefixCls,
+            `${groupPrefixCls}-${buttonStyle}`,
+            {
+              [`${groupPrefixCls}-${mergedSize}`]: mergedSize,
+            },
+            className,
+          );
+
+          return (
+            <div
+              className={classString}
+              style={props.style}
+              onMouseEnter={props.onMouseEnter}
+              onMouseLeave={props.onMouseLeave}
+              id={props.id}
+            >
+              {children}
+            </div>
+          );
+        }}
+      </SizeContext.Consumer>
     );
   };
 
