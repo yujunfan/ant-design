@@ -42,6 +42,9 @@ const Image: CompositionImage<ImageProps> = ({
       maskTransitionName: getTransitionName(rootPrefixCls, 'fade', _preview.maskTransitionName),
     };
   }, [preview, imageLocale]);
+  
+  console.log(prefixCls,mergedPreview,'mergedPreview');
+  
 
   return <RcImage prefixCls={prefixCls} preview={mergedPreview} {...otherProps} />;
 };
